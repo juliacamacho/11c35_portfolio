@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+    <nav>
+        <a href="/11c35_portfolio/index.html">Home</a>
+        <a class="current" href="/11c35_portfolio/projects/index.html">Projects</a>
+        <a href="/11c35_portfolio/contact/index.html">Contact</a>
+        <a href="/11c35_portfolio/cv/index.html">CV</a>
+        <a href="https://github.com/juliacamacho" target="_blank">Github</a>
+    </nav>
+    <h1>Assignment 2</h1>
+    <h3>Julia Camacho</h3><br />
+
+    <div class="section">
+        <h2>Dataset</h2>
+        <p>
+            I used the “Single Family Zoning vs Other Housing Zoning” dataset. This contained both demographic data (age, race, household status, income) and zoning data (prevalence of single-family zoning) for zoning areas in Greater Boston (fragments of municipalities). 
+        </p>
+    </div>
+    <br />
+
+    <div class="section">
+        <h2>Overall Questions</h2>
+        <ol>
+            <li>
+                <b>How are demographics (racial and economic) distributed spatially throughout Greater Boston?</b><br/>
+                <u>Motivation:</u> As the readings illustrated, Greater Boston has a history of people being segregated through housing patterns. I would like to investigate whether these patterns still exist today (along both racial and economic lines) and what they look like.
+            </li>
+            <li>
+                <b>Which types of zoning are most prevalent and where?</b><br/>
+                <u>Motivation:</u>The New York Times article pointed out that different areas have particular distributions of single-family zoning based on different patterns of growth and transportation networks. I would like to investigate Greater Boston’s patterns.
+            </li>
+            <li>
+                <b>How does zoning compare with population levels (do areas with more people have denser zoning)? </b><br/>
+                <u>Motivation:</u> As the readings (especially the New York Times article) described, single-family zoning is especially prevalent in new suburban developments that are less dense than historic city cores. I would like to see if this pattern holds in Greater Boston.
+            </li>
+            <li>
+                <b>How does the prevalence of single-family zoning compare spatially to the demographic characteristics of areas (zoning vs. race, zoning vs. household income level, etc.)?</b><br/>
+                <u>Motivation:</u> The Exclusionary by Design report discussed three types of zoning, two of which were racist zoning and class zoning. I would like to investigate whether there are correlations between single-family zoning and racial demographics / household income levels.
+            </li>
+        </ol>
+    </div>
+    <br />
+
+    <div class="section">
+        <h2>Discoveries and Insights</h2>
+
+        <div>
+            <p>
+                To get an initial understanding of which parts of Greater Boston are most populated, I first plotted a choropleth map of population per area. 
+            </p>
+            <img src="../images/1.png" />
+            <p>
+                For this map, I chose to exclude the municipality of Boston itself, because I found that its population was significantly larger than all other areas (538k people versus 105k people in Cambridge, the next highest populated area) and thus heavily skewed the color scale. As expected, many of the most populated areas (parts or all of Cambridge, Somerville, Malden, Quincy, Lynn, and Newton) were close to Boston. 
+            </p>
+        </div>
+        <br />
+
+        <h3>
+            Question 1
+        </h3>
+        <div>
+            <p>
+                I began exploration of this question by looking into spatial distributions of racial groups.
+            </p>
+            <hr />
+
+            <img src="../images/2.png" />
+            <p>
+                I plotted a choropleth map to get an overview of the spatial distribution of people of color in Greater Boston. The map above shows the percentage of the population in each area that was reported as nonwhite (racial identities other than “non-Hispanic white”). I calculated this field using the “non-Hispanic white” and “total population” data fields. Here, we can see that Boston proper and several other areas close to it are the most racially diverse, whereas there are many areas that are almost entirely white (close to 0% nonwhite population).
+            </p>
+            <br /><hr />
+
+            <img src="../images/3.png" />
+            <p>
+                Notably, the highest value of nonwhite population was 75.79%, found in an area constituted of small pockets of Randolph. I noted that this area’s shape seemed especially unique: might it be a result of the political carving out of a zoning district, or a consequence of older zoning less spatially segregated by land use?
+            </p>
+            <br /><hr />
+
+            <p>
+                Next, to investigate income distributions, I grouped the income levels into three buckets: below the poverty line, middle class, and upper-middle / upper class. I used the Massachusetts poverty line ($26k) for a household of three (the average household size) and the median state household income ($97k) to divide the income fields provided in the dataset. 
+            </p>
+            <img src="../images/4.png" />
+            <p>
+                The first map that I produced shows the percentage of residents in each area that were approximately under the poverty line (in this case, a yearly income per household of $24999 or below). Boston and some municipalities in the northern regions had especially high rates. 
+            </p>
+            <br /><hr />
+
+            <img src="../images/5.png" />
+            <p>
+                I also plotted a map of the percentage of residents in each zoning area that, based on Massachusetts’ median household income, I defined to be upper middle class and upper class (a yearly income per household of $100000 or above). Many of the regions west of Boston proper (more suburban areas, I presumed) were wealthier. 
+            </p>
+            <br /><hr />
+
+        </div>
+        <br />
+
+        <h3>
+            Questions 2 and 3
+        </h3>
+        <div>
+            <p>
+                To investigate my second and third questions, which aimed to investigate zoning patterns in relation to geography, population, and transportation, I first continued plotting choropleth maps in order to get a high-level overview. 
+            </p>
+            <hr />
+
+            <img src="../images/6.png" />
+            <p>
+                The map above shows the geographic distribution of zoning areas that were exclusively single family or not (values of 1 or 0). I noted that it was quite spatially distributed, not clustered into any particular regions. However, I thought that the usefulness of this map was limited because it doesn’t show the magnitude of the differences in amounts of single-family zoning among these areas.
+            </p>
+            <br /><hr />
+
+            <img src="../images/7.png" />
+            <p>
+                I thus plotted the total percentages of single-family zoning for each zoning area. I noted that the patterns here appeared to match up well with the previous binary map.
+            </p>
+            <br /><hr />
+
+            <img src="../images/8.png" />
+            <p>
+                Returning to the binary field, I also compared population sizes of each area with whether or not they were restricted only to single-family zoning or not. I thought that this visualization was not very informative, however, because of the significant amounts of overplotting. I thus decided to plot the data using the percentages of single-family zoning instead.
+            </p>
+            <br /><hr />
+            
+            <img src="../images/9.png" />
+            <p>
+                This map plots the population sizes of each zoning area against the percentage of single-family zoning. There appear to be more notable clusters: in particular, many areas have small populations but high rates of single-family zoning. However, one data quality issue also stood out to me: I realized that there were a lot of 0% single-family zoning values. I was unsure as to what this signified, since they were wrong (I double checked with Camrbidge zoning maps, for instance) — did they just indicate that there were no data available for those municipalities? (I asked in office hours and confirmed that this seems to just be a problem of missing data).
+            </p>
+            <br /><hr />
+
+            <img src="../images/10.png" />
+            <p>
+                I thus re-plotted the data after excluding these 0% values <b>(and continued this exclusion for the rest of the visualizations after this point)</b>. The resulting patterns largely appeared to remain the same: lots of small-population areas with mostly single-family zoning, and larger-population areas with lower levels of single-family only zoning.
+            </p>
+            <br /><hr />
+
+            <img src="../images/11.png" />
+            <p>
+                However, to confirm this, I also decided to use a different form of visualization to plot these data. Here, I plotted the percentage of single-family zoning for each of the municipalities (since the percentages in the dataset were calculated at this level rather than the zoning area level). I also indicated the total population of each municipality through the bar colors, with darker being larger populations and lighter being smaller populations. Here, the gradient pattern of single-family zoning being more prevalent in smaller communities and less prevalent in more populated communities was even more evident. 
+            </p>
+            <br /><hr />
+
+            <img src="../images/12.png" />
+            <p>
+                Finally, to investigate the question of why these zoning patterns may have developed in relation to land use and transportation networks, I also plotted the percentages of single-family zoning for each municipality in relation to whether they were communities served by the MBTA or not. However, I didn’t find any notable patterns because of the fact that there were so few non-MBTA communities.
+            </p>
+            <br /><hr />
+
+        </div>
+        <br />
+
+        <h3>
+            Question 4
+        </h3>
+        <div>
+            <p>
+                To explore my final question aiming to compare single-family zoning patterns to demographics (racial and economic) in order to investigate racist and class zoning, I decided to start by plotting the fields related to racial demographics.
+            </p>
+            <hr />
+
+            <img src="../images/13.png" />
+            <p>
+                In this visualization, I plotted racial demographics (the percentage of population in each zoning area that was nonwhite) against single-family zoning rates. Like the zoning versus population graph from before, I observed a cluster in the top left of mostly-white areas with high rates of single-family zoning. Using my previous visualizations and comparing the overlapping municipalities, I found that these were largely the smaller towns from before — thus indicating that there were many small, mostly white municipalities with high rates of single-family zoning. This aligns with the background information provided in the readings of communities being zoned as single-family in order to price out people of color, although this would require further investigation to prove. (In future explorations, I would also like to investigate the small cluster in the bottom left of racially diverse cities with low single-family zoning rates.)
+            </p>
+            <p>
+                However, this graph had a lot of overplotting, so I decided to create another visualization that might better display the data.
+            </p>
+            <br /><hr />
+
+            <img src="../images/14.png" />
+            <p>
+                I knew from my previous analysis above that there were large variances in population sizes (specifically, lots of areas with only small populations). I thus decided to also differentiate by population size, encoding it in both point size and intensity of color. I found that it was now easier to see the most significant data points. 
+            </p>
+            <br /><hr />
+
+            <img src="../images/14.png" />
+            <p>
+                Finally, to explore the relationship between zoning and income/class and the phenomenon of class zoning (as described in the readings), I plotted the percentage of residents in each area who were upper middle class or upper class against the rates of single-family zoning and differentiated the points, once again, by population sizes. I observed a fairly weak correlation between wealthier areas and higher rates of single-family zoning.
+            </p>
+            <br /><hr />
+
+        </div>
+        <br />
+
+        <h3>
+            Overall Summary
+        </h3>
+        <p>
+            In this exploratory data analysis, I investigated the demographic patterns of Greater Boston and the relationships between single-family zoning and population, development patterns, and racial and economic demographics. I found that there were many municipalities with small, mostly white populations that had high rates of single-family zoning. In future exploration, I hope to supplement this dataset with more land use and transportation data as well as geographic area data in order to calculate patterns of population and housing density. 
+        </p>
+
+    </div>
+    <br /><br />
+
+</body>
+</html>
+
+<style>
+
+img {
+	max-width: 80%;
+}
+
+</style>

@@ -4,7 +4,7 @@ function $$ (selector, context = document) {
 	return Array.from(context.querySelectorAll(selector));
 }
 
-// navLinks = $$("nav a")
+// let navLinks = $$("nav a")
 // let currentLink = navLinks.find(a => a.host === location.host && a.pathname === location.pathname)
 
 // if (currentLink) { // or if (currentLink !== undefined)
@@ -27,7 +27,7 @@ const ARE_WE_HOME = document.documentElement.classList.contains("home");
 for (let p of pages) {
 	let url = p.url;
 	url = !ARE_WE_HOME && !url.startsWith("http") ? "../" + url : url;
-	url = "/11c35_portfolio" + url;
+	// url = "/11c35_portfolio" + url;
 	let title = p.title;
 
 	// Create link and add it to nav
@@ -41,4 +41,27 @@ for (let p of pages) {
 
 }
 
+// color scheme selector
+document.body.insertAdjacentHTML("afterbegin", `
+	<label class="color-scheme">
+		Theme:
+		<select>
+			<option value="light dark">Automatic</option>
+			<option value="light">Light</option>
+			<option value="dark">Dark</option>
+		</select>
+	</label>`
+);
 
+let select = document.querySelector("select");
+
+select.addEventListener("input", function (event) {
+	// console.log("color scheme changed to", event.target.value);
+	localStorage.colorScheme = event.target.value
+	document.documentElement.style.setProperty("color-scheme", event.target.value);
+});
+
+if ("colorScheme" in localStorage){
+	document.documentElement.style.setProperty("color-scheme", localStorage.colorScheme);
+	select.value = localStorage.colorScheme;
+}

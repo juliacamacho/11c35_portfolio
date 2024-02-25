@@ -25,9 +25,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 nav {
+	--border-color: oklch(50% 10% 200 / 40%);
 	display: flex;
 	margin-bottom: 3ch;
-	border-bottom: 0.1em solid lightgrey;
+	border-bottom: 0.1em solid var(--border-color);
 }
 
 nav a {
@@ -51,9 +52,17 @@ nav a.current {
 nav a:hover {
 	border-bottom: 0.2em solid var(--color-accent);
 	padding-bottom: 0.3em;
-	background-color: oklch(from var(--color-accent) 95% 5% h)
+	background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 img {
 	max-width: 100%;
+}
+
+label .color-scheme {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	font-size: 80%;
+	font-family: inherit;
 }

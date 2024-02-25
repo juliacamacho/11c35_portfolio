@@ -27,6 +27,7 @@ const ARE_WE_HOME = document.documentElement.classList.contains("home");
 for (let p of pages) {
 	let url = p.url;
 	url = !ARE_WE_HOME && !url.startsWith("http") ? "../" + url : url;
+	url = "/11c35_portfolio" + url;
 	let title = p.title;
 
 	// Create link and add it to nav

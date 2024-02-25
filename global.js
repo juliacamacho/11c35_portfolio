@@ -30,7 +30,14 @@ for (let p of pages) {
 	let title = p.title;
 
 	// Create link and add it to nav
-	nav.insertAdjacentHTML("beforeend", `<a href="${ url }">${ title }</a>` );
+	let a = document.createElement("a");
+	a.href = url;
+	a.textContent = title;
+	if (a.host === location.host && a.pathname === location.pathname) {
+		a.classList.add("current");
+	}	
+	nav.append(a);
+
 }
 
 

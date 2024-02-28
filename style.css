@@ -59,10 +59,10 @@ img {
 	max-width: 100%;
 }
 
-label .color-scheme {
+label.color-scheme {
 	position: absolute;
-	top: 1px;
-	right: 1px;
+	top: 1rem;
+	right: 1rem;
 	font-size: 80%;
 	font-family: inherit;
 }

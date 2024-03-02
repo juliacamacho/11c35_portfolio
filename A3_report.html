@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 3</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 3</small>
+			Visualization Design
+		</h1>
+
+		<p>
+			<strong>Julia Camacho</strong> — <em>jcamac@mit.edu</em>
+		</p>
+	</header>
+
+	<main>
+		<section>
+			<h2>Phase One: Sketching Visualizations</h2>
+
+      <figure>
+				<img src="./images/a3_sketch1.jpeg" alt="Sketch 1" />
+				<figcaption>
+					Population sizes were significantly larger in 2000 than 1900.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 1:
+			</p>
+
+			<ul>
+				<li><b>Motivation and goals:</b> I first wanted to start out with a classic population pyramid visualization to get a feel for the overall age distribution.</li>
+				<li><b>Aspects that worked well:</b> This visualization clearly shows the differences in magnitude between the 1900 and 2000 populations. Additionally, the overall trends in aging (population distribution, maximum life expectancy) are clear. </li>
+				<li><b>Aspects that didn’t work well:</b> It’s difficult to discern the differences between male and female.</li>
+				<li><b>Would like to explore in the next sketch:</b> I would like to explore more of the differences that arise between the reported sexes.</li>
+			</ul>
+
+      <figure>
+				<img src="./images/a3_sketch2.jpeg" alt="Sketch 2" />
+				<figcaption>
+					In both 1900 and 2000, elderly populations were mostly female.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 2:
+			</p>
+
+			<ul>
+				<li><b>Motivation and goals:</b> In this sketch, I aimed to visualize the significant differences in population distribution for people reported as female between 1900 and 2000. In particular, I aimed to highlight the different starting points and midpoints.</li>
+				<li><b>Aspects that worked well:</b> This visualization clearly showed the differences in the female proportion of the population between the two years, as well as the differences in overall life expectancy as the data for 1900 ends earlier along the x-axis. </li>
+				<li><b>Aspects that didn’t work well:</b> This visualization doesn’t display the differences in magnitude of the overall population sizes between 1900 and 2000. In addition, since it is not immediately obvious that sex was a binary variable, it is difficult to visualize the differences in male-reported populations and the overall patterns for sex.</li>
+				<li><b>Would like to explore in the next sketch:</b> I aim to better display the differences for both values of sex.</li>
+			</ul>
+
+      <figure>
+				<img src="./images/a3_sketch3.jpeg" alt="Sketch 3" />
+				<figcaption>
+					Patterns of aging had significant differences by sex between 1900 and 2000.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 3:
+			</p>
+
+			<ul>
+				<li><b>Motivation and goals:</b> I aimed to visualize the differences in population by sex and highlight the fact that female-reported individuals live longer in this dataset.</li>
+				<li><b>Aspects that worked well:</b> This visualization meets the goals that I had in addition to emphasizing that people overall (both sexes) had lower life expectancies in 1900 than 2000. </li>
+				<li><b>Aspects that didn’t work well:</b> Having percent more female on the top half and percent more male on the bottom half could be initially misleading. Additionally, this visualization doesn’t display the differences in magnitude of the overall population sizes between 1900 and 2000.</li>
+				<li><b>Would like to explore in the next sketch:</b> I would like to explore ways to incorporate visualizing the overall differences in total population sizes.</li>
+			</ul>
+
+      <h3>Reflection</h3>
+
+      <p>
+        I think my first sketch best displayed the overall aging trends for the population as a whole, but struggled to highlight the differences between male and female. On the other hand, my second sketch effectively displayed the overall trends in aging for the female population, but made it difficult to understand the patterns for the male population. I think my third sketch best answers my research question by incorporating aspects from the first two sketches: it displays the data for both male and female and enables viewers to clearly see the differences between them (both in proportion and in overall lifespan). The main area of improvement that I hope to address is visualizing the difference in magnitude between the total populations per year.
+      </p>
+
+		</section>
+
+		<section>
+			<h2>Phase Two: Final Design</h2>
+
+			<figure>
+				<img src="./images/a3_final.png" alt="Final Visualization" />
+				<figcaption>
+					Overall life expectancy increased from 1900 and 2000, and there were more elderly women than men.
+				</figcaption>
+			</figure>
+		</section>
+
+		<section>
+			<h2>Design Process & Design Decisions</h2>
+
+			<p>
+				In this visualization, I built off of my third sketch in order to display the differences in the population distribution by sex between 1900 and 2000, and highlight the fact that patterns of aging at both points in time were uneven: female-reported individuals were living longer than male-reported individuals at significant rates. To visualize this, I calculated the percentages of the total population that male and female populations made up and subtracted the numbers to get the difference. This effectively answered the research question I proposed by explicitly highlighting the differences between the reported sexes.
+      		</p>
+			<p>
+				I also aimed to improve upon my previous sketch by displaying the overall magnitude of the total populations. To do this, I encoded the size of the total populations as the color intensity of each line, and provided a legend on the right-hand side. By doing this, I was able to indicate the differences in population size over time. I think this could be further improved in the future, however, by providing a way to compare the sizes of the total populations between 1900 and 2000 without having to reference the legend. Additionally, I had originally wanted to display the area under the curve and apply the color gradient there instead, but was having difficulty doing so in Tableau so I stuck to the lines instead.  
+			</p>
+
+
+      <h3>Reflection</h3>
+
+      <p>
+        Overall, sketching different forms of visualizations in Phase One greatly helped improve my final design. I was able to identify the pros and cons of each style of visualization and incorporate aspects of each into my final visualization. In particular, I recognized that it was helpful to display both sexes along an axis and use different colors for the different census years. However, one factor limited my creativity during the sketching phase: because I was drawing by hand, I initially forgot that encodings such as color intensity could be utilized. I was only able to realize this when working with the data later in a computational setting.
+      </p>
+		</section>
+	</main>
+</body>
+</html>
+
+<style>
+
+	img {
+		max-width: 80%;
+	}
+
+</style>
